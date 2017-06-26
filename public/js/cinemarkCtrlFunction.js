@@ -12,8 +12,8 @@ cinemark.controller('discoverCtrlFunctions', ['$scope', '$http', '$routeParams',
             $scope.theMovieDb.token = JSON.parse(datafortoken).request_token;
             theMovieDb.authentication.validateUser({
                 "request_token": $scope.theMovieDb.token,
-                "username": "florinmartin",
-                "password": "001429"
+                "username": "******",
+                "password": "******"
             }, function (dataforvalidation) {
                 theMovieDb.authentication.generateSession({"request_token": $scope.theMovieDb.token}, function (dataforsession) {
                     $scope.theMovieDb.sessionId = JSON.parse(dataforsession).session_id;
