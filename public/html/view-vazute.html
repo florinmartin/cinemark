@@ -1,0 +1,62 @@
+<div class="container col-xs-12 col-md-10" ng-hide="filterReveal" ng-init="initListPage()">
+    <h3>Filme vazute: <span>{{genres[genre_ids]}} {{release_date}}</span></h3>
+
+    <ul>
+        <li class="movies col-xs-12" ng-repeat="movieEntry in lists.vazute.items">
+            <a ng-href='#film/{{movieEntry.id}}'>
+                <img class="poster" id="{{movieEntry.id}}"
+                     ng-src="http://image.tmdb.org/t/p/w154{{movieEntry.poster_path || '/imO7rALWYJQ6eS2Bg91XzVd7R58.jpg'}}"
+                     ng-click="viewMoviesDetails(movieEntry)"/>
+            </a>
+
+            <div class="movie">
+                <div class="genre"><span ng-repeat="genre in movieEntry.genre_ids">{{genres[genre]}}</span></div>
+                <div class="title">
+                    <a ng-href='#film/{{movieEntry.id}}'>{{movieEntry.original_title}}</a>
+                </div>
+                <div class="titleRo">{{movieEntry.title}} <br> {{movieEntry.release_date}}</div>
+                <div class="sinopsis line-clamp">{{movieEntry.overview}}</div>
+                <div class="onthelist">
+                    <i class="fa" ng-class="movieListClass(movieEntry.id)" aria-hidden="true"></i>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+</div>
+<div class="filter col-xs-12 col-md-2" ng-show="filterReveal" ng-class="{'bringtofront' : filterReveal}"
+     ng-init="initGenres()">
+    <h3 align="center">Cauta, filtreaza sau sorteaza</h3>
+
+    <div class="gender">
+        <h4>Alege ce genuri sa aiba filmul</h4>
+        <a href="" class="genre_ids" ng-repeat="opt in genres_filter" toggle-class="active">
+            {{opt.name}} <span style="display:none">{{opt.id}}</span>
+        </a>
+    </div>
+    <div class="year">
+        <h4>Alege anul lansarii</h4>
+        <input type="number" id="release_date" disabled value="2016"/>
+        <a href="" class="yearrem" onclick="release_date.value = parseInt(release_date.value) - 1">&#xf272;</a>
+        <a href="" class="yearadd" onclick="release_date.value = parseInt(release_date.value) + 1">&#xf271;</a>
+    </div>
+    <div class="gender">
+        <h4>Alege ce genuri sa NU aiba filmul</h4>
+        <a href="" class="no_genre_ids" ng-repeat="opt in genres_filter" toggle-class="active">
+            {{opt.name}} <span style="display:none">{{opt.id}}</span>
+        </a>
+    </div>
+    <div class="gender">
+        <h4>Exclude filmele din lista de ...</h4>
+        <a href="" class="no_list" toggle-class="active"> ...de vazut <span style="display:none">x</span></a>
+        <a href="" class="no_list" toggle-class="active"> ... vazute <span style="display:none">x</span></a>
+        <a href="" class="no_list" toggle-class="active"> ...de colectie <span style="display:none">x</span></a>
+        <a href="" class="no_list" toggle-class="active"> ... groaznice <span style="display:none">x</span></a>
+        <a href="" class="no_list" toggle-class="active"> ...de NE-vazut <span style="display:none">x</span></a>
+    </div>
+    <div class="buttonsection">
+        <a href="#"
+           ng-click="initDiscoverFiltered(1, genre_ids, release_date, ''); filterReveal = !filterReveal">Cauta</a>
+    </div>
+</div>

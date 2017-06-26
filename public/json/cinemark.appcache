@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# Version 1
+
+CACHE:
+../html/nonetwork.html
+../css/app.min.css
+../img/appsplash.png
+
+FALLBACK:
+# This will enable imagename4.png to be as a replacement for 
+# all resources under the images dir when there is no network connectivity.
+/ ../html/nonetwork.html
+
+NETWORK:
+# This will prevent other network resources from being accessed.
+# images/imagename5.png

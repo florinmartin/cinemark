@@ -1,0 +1,52 @@
+<a href="#descopera" ng-click="filterReveal = false;">
+    <div class="navbar-logo col-xs-2"></div>
+</a>
+<div class="navbar-nav col-xs-10">
+    <ul class="nav navbar-nav" ng-init="topbarMoreActions">
+        <li ng-show="topbarMoreActions == 'discover'" class="mobile-view" toggle-class="active"
+            ng-click="filterReveal = !filterReveal"><i class="fa fa-filter" aria-hidden="true"></i></li>
+
+        <li ng-show="topbarMoreActions == 'details'" class="mobile-view" toggle-class="active"
+            ng-click="settolist = !settolist"><i class="fa fa-sliders" aria-hidden="true"></i></li>
+
+        <a style="float:left;">
+            <li class="mobile-view" toggle-class="active" ng-click="mobilenavReveal = !mobilenavReveal">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </li>
+        </a>
+    </ul>
+</div>
+<div class="mobilenav" ng-show="mobilenavReveal">
+    <ul>
+        <a href="#devazut"  ng-click="mobilenavReveal = false;">
+            <li toggle-class="active">
+                <i class="fa fa-slideshare" aria-hidden="true"></i>
+                <span>De vazut</span>
+            </li>
+        </a>
+        <a href="#vazute"  ng-click="mobilenavReveal = false;">
+            <li toggle-class="active">
+                <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                <span>Vazute</span>
+            </li>
+        </a>
+        <a href="#decolectie"  ng-click="mobilenavReveal = false;">
+            <li toggle-class="active">
+                <i class="fa fa-stack-overflow" aria-hidden="true"></i>
+                <span>De colectie</span>
+            </li>
+        </a>
+        <a href="#groaznice"  ng-click="mobilenavReveal = false;">
+            <li toggle-class="active">
+                <i class="fa fa-bitbucket" aria-hidden="true"></i>
+                <span>Groaznice</span>
+            </li>
+        </a>
+        <a href="#nuvreausavad"  ng-click="mobilenavReveal = false;">
+            <li toggle-class="active">
+                <i class="fa fa-low-vision" aria-hidden="true"></i>
+                <span>Nu vreau</span>
+            </li>
+        </a>
+    </ul>
+</div>

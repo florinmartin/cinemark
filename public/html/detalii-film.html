@@ -1,0 +1,99 @@
+<div id="movie_details" ng-init="initMoviesDetails()">
+
+    <div class="header">
+        <img class="poster"
+             ng-src="http://image.tmdb.org/t/p/w154{{movie.details.poster_path || '/imO7rALWYJQ6eS2Bg91XzVd7R58.jpg'}}"/>
+
+        <div class="maindetails">
+            <div class="title">{{movie.details.original_title}} {{lastvisitedelementposition}}</div>
+            <div class="meta">{{movie.details.genre_ids}}<span ng-repeat="genre in movie.details.genre_ids">{{genres[genre]}}</span>
+            </div>
+            <div class="meta"><b>Release date: </b> {{movie.details.release_date}}</div>
+            <div class="meta"><b>Language: </b> {{movie.details.original_language.toUpperCase()}}</div>
+        </div>
+    </div>
+    <div class="onthelist" ng-class="movieListClass(movie.details.id)" ng-click="removeFromList(movie.details.id)">
+        <i class="fa" ng-class="movieListClass(movie.details.id)" aria-hidden="true"></i>
+    </div>
+    <div class="settolist" ng-show="settolist">
+        <a ng-click="addToList(11570, movie.details.id)" class="devazut">
+            <i class="fa fa-slideshare" aria-hidden="true"></i></a>
+        <a ng-click="addToList(11586, movie.details.id)" class="vazute">
+            <i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+        <a ng-click="addToList(11589, movie.details.id)" class="decolectie">
+            <i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+        <a ng-click="addToList(11588, movie.details.id)" class="groaznice">
+            <i class="fa fa-bitbucket" aria-hidden="true"></i></a>
+        <a ng-click="addToList(11587, movie.details.id)" class="nuvreausavad">
+            <i class="fa fa-low-vision" aria-hidden="true"></i></a>
+    </div>
+    <div class="content">
+        <!--<h3>Overview</h3>-->
+
+        <div class="overview">
+            {{movie.details.overview}}
+            <!--<div class="torrent" ng-if="movie.torrent.bluray">BluRay available on torrents</div>-->
+        </div>
+
+        <h3 ng-if="movie.trailers.length > 0">Trailers</h3>
+
+        <div class="gallery" ng-if="movie.trailers.length > 0">
+            <ul rn-carousel rn-carousel-index="carouselIndexTrailer" rn-carousel-transition="hexagon"
+                rn-carousel-buffered="" rn-carousel-on-infinite-scroll-right="loadNextImages()"
+                class="carousel3 ng-scope">
+                <li ng-repeat="trailer in movie.trailers">
+                    <div class="bgimage">
+                        <!--<div class="blockthestupidautoplay"></div>-->
+                        <object type="application/x-shockwave-flash" style="width:100%; height:240px;"
+                                data="//www.youtube.com/v/{{trailer.source}}?color2=FBE9EC&amp;rel=0&amp;showsearch=0&amp;showinfo=0&amp;version=3&amp;modestbranding=1&amp;fs=1">
+                            <param name="movie"
+                                   value="//www.youtube.com/v/{{trailer.source}}?color2=FBE9EC&amp;rel=0&amp;showsearch=0&amp;showinfo=0&amp;version=3&amp;modestbranding=1&amp;fs=1"/>
+                            <param name="allowFullScreen" value="true"/>
+                            <param name="allowscriptaccess" value="always"/>
+                        </object>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <h3 ng-if="movie.images.length > 0">Gallery</h3>
+
+        <div class="gallery" ng-if="movie.images.length > 0">
+            <ul rn-carousel rn-carousel-index="carouselIndexImage" rn-carousel-transition="hexagon"
+                rn-carousel-buffered="" rn-carousel-on-infinite-scroll-right="loadNextImages()"
+                class="carousel3 ng-scope">
+                <li ng-repeat="img in movie.images">
+                    <div class="bgimage"
+                         style="background-image: url('http://image.tmdb.org/t/p/w500{{img.file_path}}');"></div>
+                </li>
+            </ul>
+        </div>
+
+        <h3 ng-if="movie.similarmovies.length > 0">Similar movies</h3>
+
+        <div class="container">
+            <ul ng-if="movie.similarmovies.length > 0">
+                <li class="movies col-xs-12" ng-repeat="similar in movie.similarmovies">
+                    <a ng-href='#film/{{similar.id}}'>
+                        <img class="poster" id="{{similar.id}}"
+                             ng-src="http://image.tmdb.org/t/p/w154{{similar.poster_path || '/imO7rALWYJQ6eS2Bg91XzVd7R58.jpg'}}"
+                             ng-click="viewMoviesDetails(similar)"/>
+                    </a>
+
+                    <div class="movie">
+                        <div class="genre"><span ng-repeat="genre in similar.genre_ids">{{genres[genre]}}</span></div>
+                        <div class="title"><a ng-href='#film/{{similar.id}}'>{{similar.original_title}}</a></div>
+                        <div class="titleRo">{{similar.title}} <br> {{similar.release_date}}</div>
+                        <div class="sinopsis line-clamp">{{similar.overview}}</div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--<div class="backbtn"-->
+    <!--ng-click="movieDetailsReveal = !movieDetailsReveal; setbackthescrollposition(currentscrollposition)">-->
+    <!--<i class="fa fa-arrow-left" aria-hidden="true"></i>-->
+    <!--</div>-->
+
+</div>

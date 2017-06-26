@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--<html ng-app="cinemark" manifest="json/cinemark.appcache">-->
+<html ng-app="cinemark">
+<head>
+    <title>cinemark</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    div {
+        background-image: url('http://cdn.pymnts.com/wp-content/uploads/2016/09/smart-phone-digital-identity-e1474918055620.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height:100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<div></div>
+
+
+<script src="../lib/jquery-3.1.1.min.js"></script>
+<script type="application/javascript">
+    $(window).resize(function () {
+        if (document.body.clientWidth < 550) {
+            window.location = '/';
+        }
+    });
+</script>
+</body>
+</html>

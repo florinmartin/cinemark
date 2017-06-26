@@ -1,0 +1,24 @@
+{
+  "name": "cinemark",
+  "version": "0.0.1",
+  "description": "cinemark",
+  "author": "Martin Florin",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "connect-livereload": "^0.6.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.1.1",
+    "path": "^0.12.7",
+    "tiny-lr": "^0.2.1"
+  }
+}

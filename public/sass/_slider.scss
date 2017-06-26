@@ -1,0 +1,26 @@
+.gallery {
+
+  width: 100%;
+  overflow: hidden;
+  height: 240px;
+  margin-bottom: 30px;
+
+  ul[rn-carousel-transition="hexagon"] {
+    margin: 0 10px;
+    //overflow: visible;
+  }
+  .bgimage {
+    text-align: right;
+    color: #fff;
+    background-size: cover;
+    height: 240px;
+    background-position: center center;
+  }
+  .blockthestupidautoplay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+  }
+
+}

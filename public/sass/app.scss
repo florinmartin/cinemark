@@ -1,0 +1,17 @@
+@import "reset";
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+  center {
+    display: none !important;
+  }
+}
+center {
+  display: none !important;
+}
+
+@import "utilis";
+@import "header";
+@import "page";
+@import "slider";

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--<html ng-app="cinemark" manifest="json/cinemark.appcache">-->
+<html ng-app="cinemark">
+<head>
+    <title>cinemark</title>
+
+    <meta charset="utf-8">
+    <meta name="application-name" content="cinemark">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
+
+    <link rel="manifest" href="json/manifest.json">
+    <link rel="icon" sizes="192x192" href="img/appicon.png">
+    <link rel="apple-touch-startup-image" href="img/appsplash.png" />
+
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="lib/angular/angular-touch.min.js"></script>
+    <script src="lib/angular/angular-carousel.min.js"></script>
+    <script src="lib/angular/angular-resource.min.js"></script>
+    <script src="lib/angular/angular-sanitize.min.js"></script>
+    <script src="lib/underscore-min.js"></script>
+    <script src="lib/themoviedb.js"></script>
+    <script src="js/cinemark.js"></script>
+    <script src="js/cinemarkCtrlScope.js"></script>
+    <script src="js/cinemarkCtrlFunctions.js"></script>
+    <script src="js/cinemarkCtrl.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/angular/angular-carousel.min.css">
+</head>
+<body ng-controller="moviesCtrl" ng-init="init()">
+<top-navigation class="navbar navbar-default navbar-fixed-top"></top-navigation>
+<main-container></main-container>
+
+<script src="lib/jquery-3.1.1.min.js"></script>
+<script src="lib/jquery.sldr.js"></script>
+<script src="js/functions.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
